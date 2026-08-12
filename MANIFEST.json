@@ -1,0 +1,13 @@
+{
+  "dynamics_commit": "fa7e88350d05ac8392962a3615450eaea338b4fe",
+  "export_tool_version": "1",
+  "param_csv_contract": 1,
+  "params": {
+    "count": 1,
+    "sha256": "b64b99750d7a80b88353406352063b8938e6d2fe7ee9721f181844e351b64083",
+    "static": [],
+    "symbolic": [
+      "RATE_KP_P"
+    ]
+  }
+}
