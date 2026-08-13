@@ -1,5 +1,5 @@
 {
-  "dynamics_commit": "073daab41eedb7f56690a3f377d9ccc306c8a33b",
+  "dynamics_commit": "9870bf0c5ba15da53ec798e082b85cbbd925ec79",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
@@ -12,7 +12,7 @@
   },
   "plant": {
     "casadi_version": "3.7.0",
-    "dynamics_commit": "073daab41eedb7f56690a3f377d9ccc306c8a33b",
+    "dynamics_commit": "9870bf0c5ba15da53ec798e082b85cbbd925ec79",
     "entry_point": "plant_step",
     "export_tool_version": "1",
     "files": {
