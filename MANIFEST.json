@@ -1,5 +1,5 @@
 {
-  "dynamics_commit": "79ebc560ade8a69371414e597d7cc955d2d0a2b6",
+  "dynamics_commit": "c096f4c1849a6fbc3fbe53a0e59e0479e2ac5d3c",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
@@ -12,12 +12,36 @@
   },
   "plant": {
     "casadi_version": "3.7.0",
-    "dynamics_commit": "79ebc560ade8a69371414e597d7cc955d2d0a2b6",
+    "dynamics_commit": "c096f4c1849a6fbc3fbe53a0e59e0479e2ac5d3c",
     "entry_point": "plant_step",
     "export_tool_version": "1",
     "files": {
-      "plant_step.c": "a9639a6dac5303e8ffd489810b0c16cccc37017486b04e30d388e80bf93d52f8",
-      "plant_step.casadi": "e57b2e0cc2cf6f7bc018836f6af63ecbb738a20f2283e82eec68c4acf0b55eeb"
+      "plant_linkage.c": "7ddcaf10916f53968a1f7cc13ac76e9fd07b9a322331ad7947efb4dc8d2fbdea",
+      "plant_linkage.casadi": "2c34d5b6b277ba609990ce48825611f83928c455dde7911848495cfd30674000",
+      "plant_observe.c": "4578f6655d821b36209c1a7fb4983cb250e828b723106d6cba094da16513746a",
+      "plant_observe.casadi": "df92e0f2f2a043ba22b29cb457381a1569a7e2b0fa1d98a2909cac0f8d33cf55",
+      "plant_step.c": "37aca311a3d8bfb25b03001579b31d1b99a32c2ab180ee96c036144d5b032d37",
+      "plant_step.casadi": "509912b0ee2a8681890de7b896eb27837f3b3d91a8923d0ac23382e2851cfaf7"
+    },
+    "input_layout": {
+      "surface_command": {
+        "frame": "none",
+        "offset": 0,
+        "shape": [
+          8,
+          1
+        ],
+        "unit": "rad"
+      },
+      "throttle_command": {
+        "frame": "none",
+        "offset": 8,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "1"
+      }
     },
     "integration": {
       "hold": "zero-order",
@@ -71,7 +95,183 @@
         "unit": "rad"
       }
     },
+    "linkage": {
+      "gain_us_per_rad": [
+        764.0,
+        764.0,
+        764.0,
+        764.0,
+        764.0,
+        764.0,
+        764.0,
+        764.0
+      ],
+      "input": "pwm_us, in surface order \u2014 routing from PWM channels is the consumer's",
+      "neutral_us": 1500.0
+    },
+    "linkage_entry_point": "plant_linkage",
+    "observe_entry_point": "plant_observe",
+    "observe_layout": {
+      "air_density": {
+        "frame": "none",
+        "offset": 30,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "kg/m^3"
+      },
+      "air_temperature": {
+        "frame": "none",
+        "offset": 29,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "K"
+      },
+      "airspeed": {
+        "frame": "none",
+        "offset": 19,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "m/s"
+      },
+      "altitude_msl": {
+        "frame": "none",
+        "offset": 26,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "m"
+      },
+      "differential_pressure": {
+        "frame": "none",
+        "offset": 32,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "Pa"
+      },
+      "force_body": {
+        "frame": "body",
+        "offset": 0,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "N"
+      },
+      "geodetic_latitude": {
+        "frame": "none",
+        "offset": 27,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "rad"
+      },
+      "geodetic_longitude": {
+        "frame": "none",
+        "offset": 28,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "rad"
+      },
+      "gravity_vector_inertial": {
+        "frame": "inertial",
+        "offset": 6,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s^2"
+      },
+      "inertia_tensor_body": {
+        "frame": "body",
+        "offset": 10,
+        "shape": [
+          3,
+          3
+        ],
+        "unit": "kg*m^2"
+      },
+      "mass": {
+        "frame": "none",
+        "offset": 9,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "kg"
+      },
+      "moment_body": {
+        "frame": "body",
+        "offset": 3,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "N*m"
+      },
+      "specific_force_body": {
+        "frame": "body",
+        "offset": 20,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s^2"
+      },
+      "static_pressure": {
+        "frame": "none",
+        "offset": 31,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "Pa"
+      },
+      "velocity_ned": {
+        "frame": "inertial",
+        "offset": 23,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s"
+      }
+    },
     "placeholder": true,
+    "rest_state": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
     "signature": {
       "algebraic": [
         "force_body",
@@ -79,7 +279,16 @@
         "gravity_vector_inertial",
         "mass",
         "inertia_tensor_body",
-        "airspeed"
+        "airspeed",
+        "specific_force_body",
+        "velocity_ned",
+        "altitude_msl",
+        "geodetic_latitude",
+        "geodetic_longitude",
+        "air_temperature",
+        "air_density",
+        "static_pressure",
+        "differential_pressure"
       ],
       "inputs": [
         "surface_command",
