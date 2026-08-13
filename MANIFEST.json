@@ -1,5 +1,5 @@
 {
-  "dynamics_commit": "fa7e88350d05ac8392962a3615450eaea338b4fe",
+  "dynamics_commit": "073daab41eedb7f56690a3f377d9ccc306c8a33b",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
@@ -9,5 +9,92 @@
     "symbolic": [
       "RATE_KP_P"
     ]
+  },
+  "plant": {
+    "casadi_version": "3.7.0",
+    "dynamics_commit": "073daab41eedb7f56690a3f377d9ccc306c8a33b",
+    "entry_point": "plant_step",
+    "export_tool_version": "1",
+    "files": {
+      "plant_f.casadi": "9d4b0c7ab150f78a78a7e20d4fcfce9afc7995c9ea78e8a39b4dc9280a933424",
+      "plant_step.c": "a9639a6dac5303e8ffd489810b0c16cccc37017486b04e30d388e80bf93d52f8",
+      "plant_step.casadi": "e57b2e0cc2cf6f7bc018836f6af63ecbb738a20f2283e82eec68c4acf0b55eeb"
+    },
+    "integration": {
+      "hold": "zero-order",
+      "scheme": "rk4",
+      "step": "fixed"
+    },
+    "layout": {
+      "body_angular_velocity": {
+        "frame": "body",
+        "offset": 10,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "rad/s"
+      },
+      "body_linear_velocity": {
+        "frame": "body",
+        "offset": 7,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s"
+      },
+      "inertial_orientation_quaternion": {
+        "frame": "none",
+        "offset": 3,
+        "shape": [
+          4,
+          1
+        ],
+        "unit": "1"
+      },
+      "inertial_position": {
+        "frame": "inertial",
+        "offset": 0,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m"
+      },
+      "surface_position": {
+        "frame": "none",
+        "offset": 13,
+        "shape": [
+          8,
+          1
+        ],
+        "unit": "rad"
+      }
+    },
+    "placeholder": true,
+    "signature": {
+      "algebraic": [
+        "force_body",
+        "moment_body",
+        "gravity_vector_inertial",
+        "mass",
+        "inertia_tensor_body",
+        "airspeed"
+      ],
+      "inputs": [
+        "surface_command",
+        "throttle_command"
+      ],
+      "nu": 9,
+      "nx": 21,
+      "states": [
+        "inertial_position",
+        "inertial_orientation_quaternion",
+        "body_linear_velocity",
+        "body_angular_velocity",
+        "surface_position"
+      ]
+    }
   }
 }
