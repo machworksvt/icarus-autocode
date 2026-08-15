@@ -1,5 +1,5 @@
 {
-  "dynamics_commit": "d066a527062265f5f2d769bd20068bd3ff0947fa",
+  "dynamics_commit": "f270cf9e3a81f4d3ca6ce4901c1053a25c3601c9",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
@@ -12,18 +12,54 @@
   },
   "plant": {
     "casadi_version": "3.7.0",
-    "dynamics_commit": "d066a527062265f5f2d769bd20068bd3ff0947fa",
+    "dynamics_commit": "f270cf9e3a81f4d3ca6ce4901c1053a25c3601c9",
     "entry_point": "plant_step",
     "export_tool_version": "1",
     "files": {
       "plant_linkage.c": "7ddcaf10916f53968a1f7cc13ac76e9fd07b9a322331ad7947efb4dc8d2fbdea",
       "plant_linkage.casadi": "2c34d5b6b277ba609990ce48825611f83928c455dde7911848495cfd30674000",
-      "plant_observe.c": "4578f6655d821b36209c1a7fb4983cb250e828b723106d6cba094da16513746a",
-      "plant_observe.casadi": "df92e0f2f2a043ba22b29cb457381a1569a7e2b0fa1d98a2909cac0f8d33cf55",
-      "plant_step.c": "37aca311a3d8bfb25b03001579b31d1b99a32c2ab180ee96c036144d5b032d37",
-      "plant_step.casadi": "509912b0ee2a8681890de7b896eb27837f3b3d91a8923d0ac23382e2851cfaf7"
+      "plant_observe.c": "a1c61a18f1f7f6f6a89dca9d0c7934a3d3b4e149fe301583b4330f974404f5ba",
+      "plant_observe.casadi": "d97311374439f9183de4e1ecd15a0f4fc3c894446566757cd715b95b537613b9",
+      "plant_step.c": "4e9fc913dfe1d74fe1b3051fe434bb12d37a91de74a688ea2005a5046b54c0b5",
+      "plant_step.casadi": "d1e7e8cca5830f08468e4b6a3681cba17f70a0d7e28bd399b4227b3a782a93c1"
     },
     "input_layout": {
+      "accel_bias_drive": {
+        "frame": "none",
+        "offset": 18,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "s^-0.5"
+      },
+      "accel_noise_drive": {
+        "frame": "none",
+        "offset": 12,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "s^-0.5"
+      },
+      "gyro_bias_drive": {
+        "frame": "none",
+        "offset": 15,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "s^-0.5"
+      },
+      "gyro_noise_drive": {
+        "frame": "none",
+        "offset": 9,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "s^-0.5"
+      },
       "surface_command": {
         "frame": "none",
         "offset": 0,
@@ -49,6 +85,15 @@
       "step": "fixed"
     },
     "layout": {
+      "accel_bias_body": {
+        "frame": "body",
+        "offset": 24,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s^2"
+      },
       "body_angular_velocity": {
         "frame": "body",
         "offset": 10,
@@ -66,6 +111,15 @@
           1
         ],
         "unit": "m/s"
+      },
+      "gyro_bias_body": {
+        "frame": "body",
+        "offset": 21,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "rad/s"
       },
       "inertial_orientation_quaternion": {
         "frame": "none",
@@ -148,6 +202,24 @@
         ],
         "unit": "m"
       },
+      "angular_rate_measured_body": {
+        "frame": "body",
+        "offset": 36,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "rad/s"
+      },
+      "body_angular_acceleration": {
+        "frame": "body",
+        "offset": 33,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "rad/s^2"
+      },
       "differential_pressure": {
         "frame": "none",
         "offset": 32,
@@ -229,6 +301,15 @@
         ],
         "unit": "m/s^2"
       },
+      "specific_force_measured_body": {
+        "frame": "body",
+        "offset": 39,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s^2"
+      },
       "static_pressure": {
         "frame": "none",
         "offset": 31,
@@ -270,6 +351,12 @@
       0.0,
       0.0,
       0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
       0.0
     ],
     "signature": {
@@ -288,20 +375,29 @@
         "air_temperature",
         "air_density",
         "static_pressure",
-        "differential_pressure"
+        "differential_pressure",
+        "body_angular_acceleration",
+        "angular_rate_measured_body",
+        "specific_force_measured_body"
       ],
       "inputs": [
         "surface_command",
-        "throttle_command"
+        "throttle_command",
+        "gyro_noise_drive",
+        "accel_noise_drive",
+        "gyro_bias_drive",
+        "accel_bias_drive"
       ],
-      "nu": 9,
-      "nx": 21,
+      "nu": 21,
+      "nx": 27,
       "states": [
         "inertial_position",
         "inertial_orientation_quaternion",
         "body_linear_velocity",
         "body_angular_velocity",
-        "surface_position"
+        "surface_position",
+        "gyro_bias_body",
+        "accel_bias_body"
       ]
     }
   }
