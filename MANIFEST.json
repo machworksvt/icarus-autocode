@@ -1,18 +1,312 @@
 {
-  "dynamics_commit": "f270cf9e3a81f4d3ca6ce4901c1053a25c3601c9",
+  "ctl": {
+    "abi": {
+      "in_slots": [
+        {
+          "name": "stick_roll",
+          "offset": 0,
+          "size": 1,
+          "unit": "1"
+        },
+        {
+          "name": "stick_pitch",
+          "offset": 1,
+          "size": 1,
+          "unit": "1"
+        },
+        {
+          "name": "stick_yaw",
+          "offset": 2,
+          "size": 1,
+          "unit": "1"
+        },
+        {
+          "name": "q_est",
+          "offset": 3,
+          "size": 4,
+          "unit": "1"
+        },
+        {
+          "name": "rate_est",
+          "offset": 7,
+          "size": 3,
+          "unit": "rad/s"
+        },
+        {
+          "name": "dt_s",
+          "offset": 10,
+          "size": 1,
+          "unit": "s"
+        }
+      ],
+      "inputs": [
+        "in",
+        "x",
+        "p"
+      ],
+      "n_in": 11,
+      "n_p": 36,
+      "n_sig": 10,
+      "n_surface": 8,
+      "n_x": 2,
+      "outputs": [
+        "x_next",
+        "surface_cmd",
+        "ctl_signals"
+      ],
+      "param_order": [
+        "RATE_KP_P",
+        "RATE_KI_P",
+        "RATE_KP_Q",
+        "RATE_KI_Q",
+        "RATE_KP_R",
+        "RATE_ILIM_P",
+        "RATE_ILIM_Q",
+        "STAB_KP_ROLL",
+        "STAB_KP_PITCH",
+        "STAB_MAX_BANK",
+        "STAB_MAX_PITCH",
+        "STAB_YAW_RATE",
+        "MIX_0_0",
+        "MIX_0_1",
+        "MIX_0_2",
+        "MIX_1_0",
+        "MIX_1_1",
+        "MIX_1_2",
+        "MIX_2_0",
+        "MIX_2_1",
+        "MIX_2_2",
+        "MIX_3_0",
+        "MIX_3_1",
+        "MIX_3_2",
+        "MIX_4_0",
+        "MIX_4_1",
+        "MIX_4_2",
+        "MIX_5_0",
+        "MIX_5_1",
+        "MIX_5_2",
+        "MIX_6_0",
+        "MIX_6_1",
+        "MIX_6_2",
+        "MIX_7_0",
+        "MIX_7_1",
+        "MIX_7_2"
+      ],
+      "work": {
+        "sz_arg": 11,
+        "sz_iw": 0,
+        "sz_res": 4,
+        "sz_w": 114
+      },
+      "x_slots": [
+        {
+          "name": "integ_p",
+          "offset": 0,
+          "size": 1,
+          "unit": "rad"
+        },
+        {
+          "name": "integ_q",
+          "offset": 1,
+          "size": 1,
+          "unit": "rad"
+        }
+      ]
+    },
+    "casadi_version": "3.7.0",
+    "ctl_internal": {
+      "dtype": "f64",
+      "manifest_hash": "0xc0f5af151ad8e76a",
+      "payload_bytes": 80,
+      "slots": [
+        {
+          "name": "roll_sp",
+          "offset": 0,
+          "size": 1,
+          "unit": "rad"
+        },
+        {
+          "name": "pitch_sp",
+          "offset": 1,
+          "size": 1,
+          "unit": "rad"
+        },
+        {
+          "name": "rate_sp_p",
+          "offset": 2,
+          "size": 1,
+          "unit": "rad/s"
+        },
+        {
+          "name": "rate_sp_q",
+          "offset": 3,
+          "size": 1,
+          "unit": "rad/s"
+        },
+        {
+          "name": "rate_sp_r",
+          "offset": 4,
+          "size": 1,
+          "unit": "rad/s"
+        },
+        {
+          "name": "integ_p",
+          "offset": 5,
+          "size": 1,
+          "unit": "rad"
+        },
+        {
+          "name": "integ_q",
+          "offset": 6,
+          "size": 1,
+          "unit": "rad"
+        },
+        {
+          "name": "mom_l",
+          "offset": 7,
+          "size": 1,
+          "unit": "1"
+        },
+        {
+          "name": "mom_m",
+          "offset": 8,
+          "size": 1,
+          "unit": "1"
+        },
+        {
+          "name": "mom_n",
+          "offset": 9,
+          "size": 1,
+          "unit": "1"
+        }
+      ]
+    },
+    "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
+    "entry_point": "ctl_step",
+    "export_tool_version": "1",
+    "files": {
+      "ctl_step.c": "160424f66ea8443904bec802f76b586051914166a8204af3d5f01506ad6bea4f",
+      "ctl_step.casadi": "0eda125d6b0e3685a721fb76c1311126deb55ac1fd50148cba0955af840e2d61"
+    }
+  },
+  "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
-    "count": 1,
-    "sha256": "b64b99750d7a80b88353406352063b8938e6d2fe7ee9721f181844e351b64083",
+    "count": 36,
+    "sha256": "48c9cebafec5f732090ab78fe43997250b8b28f7bb237e37abde6b64229a60a1",
     "static": [],
     "symbolic": [
-      "RATE_KP_P"
-    ]
+      "MIX_0_0",
+      "MIX_0_1",
+      "MIX_0_2",
+      "MIX_1_0",
+      "MIX_1_1",
+      "MIX_1_2",
+      "MIX_2_0",
+      "MIX_2_1",
+      "MIX_2_2",
+      "MIX_3_0",
+      "MIX_3_1",
+      "MIX_3_2",
+      "MIX_4_0",
+      "MIX_4_1",
+      "MIX_4_2",
+      "MIX_5_0",
+      "MIX_5_1",
+      "MIX_5_2",
+      "MIX_6_0",
+      "MIX_6_1",
+      "MIX_6_2",
+      "MIX_7_0",
+      "MIX_7_1",
+      "MIX_7_2",
+      "RATE_ILIM_P",
+      "RATE_ILIM_Q",
+      "RATE_KI_P",
+      "RATE_KI_Q",
+      "RATE_KP_P",
+      "RATE_KP_Q",
+      "RATE_KP_R",
+      "STAB_KP_PITCH",
+      "STAB_KP_ROLL",
+      "STAB_MAX_BANK",
+      "STAB_MAX_PITCH",
+      "STAB_YAW_RATE"
+    ],
+    "synthesis": {
+      "cost": {
+        "final": 0.031148108480885835,
+        "initial": 0.07636128078553338
+      },
+      "dynamics_commit": "f270cf9e3a81f4d3ca6ce4901c1053a25c3601c9",
+      "floors": {
+        "gm_db": 6.0,
+        "pm_deg": 45.0
+      },
+      "iters": 60,
+      "manoeuvre": {
+        "dt_s": 0.005,
+        "n_steps": 1800,
+        "name": "doublet_sticks"
+      },
+      "margins": [
+        {
+          "crossover_rad_s": 8.8144,
+          "gm_db": null,
+          "loop": "rate_p",
+          "pm_deg": 68.41
+        },
+        {
+          "crossover_rad_s": 10.9486,
+          "gm_db": null,
+          "loop": "rate_q",
+          "pm_deg": 46.31
+        },
+        {
+          "crossover_rad_s": 4.1526,
+          "gm_db": null,
+          "loop": "rate_r",
+          "pm_deg": 93.53
+        },
+        {
+          "crossover_rad_s": 4.2755,
+          "gm_db": 13.78,
+          "loop": "att_roll",
+          "pm_deg": 63.46
+        },
+        {
+          "crossover_rad_s": 4.6516,
+          "gm_db": 10.43,
+          "loop": "att_pitch",
+          "pm_deg": 73.64
+        }
+      ],
+      "plant_placeholder": true,
+      "restarts": 4,
+      "seed": 20260816,
+      "stage": "ctl tune",
+      "tool_version": "1",
+      "tuned": {
+        "RATE_KI_P": "3.952780582353773",
+        "RATE_KI_Q": "3.4874783582950686",
+        "RATE_KP_P": "0.5289243959895368",
+        "RATE_KP_Q": "0.759003733531486",
+        "RATE_KP_R": "2.2171976101164286",
+        "STAB_KP_PITCH": "3.8919166323597274",
+        "STAB_KP_ROLL": "4.38499730948847"
+      },
+      "weights": {
+        "att": 1.0,
+        "effort": 0.05,
+        "integ": 0.01,
+        "yaw": 0.5
+      }
+    }
   },
   "plant": {
     "casadi_version": "3.7.0",
-    "dynamics_commit": "f270cf9e3a81f4d3ca6ce4901c1053a25c3601c9",
+    "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
     "entry_point": "plant_step",
     "export_tool_version": "1",
     "files": {
