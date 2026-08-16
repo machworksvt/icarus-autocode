@@ -181,7 +181,7 @@
         }
       ]
     },
-    "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
+    "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
     "entry_point": "ctl_step",
     "export_tool_version": "1",
     "files": {
@@ -189,12 +189,12 @@
       "ctl_step.casadi": "0eda125d6b0e3685a721fb76c1311126deb55ac1fd50148cba0955af840e2d61"
     }
   },
-  "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
+  "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
     "count": 36,
-    "sha256": "48c9cebafec5f732090ab78fe43997250b8b28f7bb237e37abde6b64229a60a1",
+    "sha256": "6862c5ffe68a8eff72ae89cd4625e842cbbcefa7053df1bc7639c51c0b3d1a37",
     "static": [],
     "symbolic": [
       "MIX_0_0",
@@ -235,11 +235,12 @@
       "STAB_YAW_RATE"
     ],
     "synthesis": {
+      "actuator_update_hz": 50.0,
       "cost": {
-        "final": 0.031148108480885835,
-        "initial": 0.07636128078553338
+        "final": 0.03100863535655725,
+        "initial": 0.031055466448642894
       },
-      "dynamics_commit": "f270cf9e3a81f4d3ca6ce4901c1053a25c3601c9",
+      "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
       "floors": {
         "gm_db": 6.0,
         "pm_deg": 45.0
@@ -250,36 +251,37 @@
         "n_steps": 1800,
         "name": "doublet_sticks"
       },
+      "margin_constrained": true,
       "margins": [
         {
-          "crossover_rad_s": 8.8144,
-          "gm_db": null,
+          "crossover_rad_s": 8.6939,
+          "gm_db": 20.98,
           "loop": "rate_p",
-          "pm_deg": 68.41
+          "pm_deg": 64.63
         },
         {
-          "crossover_rad_s": 10.9486,
-          "gm_db": null,
+          "crossover_rad_s": 9.9865,
+          "gm_db": 18.87,
           "loop": "rate_q",
-          "pm_deg": 46.31
+          "pm_deg": 45.01
         },
         {
-          "crossover_rad_s": 4.1526,
-          "gm_db": null,
+          "crossover_rad_s": 4.2032,
+          "gm_db": 28.09,
           "loop": "rate_r",
-          "pm_deg": 93.53
+          "pm_deg": 90.81
         },
         {
-          "crossover_rad_s": 4.2755,
-          "gm_db": 13.78,
+          "crossover_rad_s": 4.2907,
+          "gm_db": 11.7,
           "loop": "att_roll",
-          "pm_deg": 63.46
+          "pm_deg": 62.51
         },
         {
-          "crossover_rad_s": 4.6516,
-          "gm_db": 10.43,
+          "crossover_rad_s": 4.3713,
+          "gm_db": 9.23,
           "loop": "att_pitch",
-          "pm_deg": 73.64
+          "pm_deg": 71.5
         }
       ],
       "plant_placeholder": true,
@@ -288,13 +290,13 @@
       "stage": "ctl tune",
       "tool_version": "1",
       "tuned": {
-        "RATE_KI_P": "3.952780582353773",
-        "RATE_KI_Q": "3.4874783582950686",
-        "RATE_KP_P": "0.5289243959895368",
-        "RATE_KP_Q": "0.759003733531486",
-        "RATE_KP_R": "2.2171976101164286",
-        "STAB_KP_PITCH": "3.8919166323597274",
-        "STAB_KP_ROLL": "4.38499730948847"
+        "RATE_KI_P": "3.824326877690407",
+        "RATE_KI_Q": "2.6732643662534223",
+        "RATE_KP_P": "0.5285447309500837",
+        "RATE_KP_Q": "0.6884885221768535",
+        "RATE_KP_R": "2.2441783793194507",
+        "STAB_KP_PITCH": "3.6661289785961206",
+        "STAB_KP_ROLL": "4.359113507816538"
       },
       "weights": {
         "att": 1.0,
@@ -306,16 +308,16 @@
   },
   "plant": {
     "casadi_version": "3.7.0",
-    "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
+    "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
     "entry_point": "plant_step",
     "export_tool_version": "1",
     "files": {
       "plant_linkage.c": "7ddcaf10916f53968a1f7cc13ac76e9fd07b9a322331ad7947efb4dc8d2fbdea",
       "plant_linkage.casadi": "2c34d5b6b277ba609990ce48825611f83928c455dde7911848495cfd30674000",
-      "plant_observe.c": "a1c61a18f1f7f6f6a89dca9d0c7934a3d3b4e149fe301583b4330f974404f5ba",
-      "plant_observe.casadi": "d97311374439f9183de4e1ecd15a0f4fc3c894446566757cd715b95b537613b9",
-      "plant_step.c": "4e9fc913dfe1d74fe1b3051fe434bb12d37a91de74a688ea2005a5046b54c0b5",
-      "plant_step.casadi": "d1e7e8cca5830f08468e4b6a3681cba17f70a0d7e28bd399b4227b3a782a93c1"
+      "plant_observe.c": "74c901389946caa3080902c911cd3af2326db5ec042cd8e0881e7cdb687e26b4",
+      "plant_observe.casadi": "1fd9110b6c4755f6e9fc03f8c8e9046b28bbe584a6d2098829b0d98a9d5f8112",
+      "plant_step.c": "366ac5905b98a2505f68851e471a7d9900a0bd1c49ced98013b9ebe6dd0d58b1",
+      "plant_step.casadi": "7abe10f3511ab47aaa76c7d0e0756575871784e66fcc087530d6293c7b77e9d9"
     },
     "input_layout": {
       "accel_bias_drive": {
@@ -371,6 +373,15 @@
           1
         ],
         "unit": "1"
+      },
+      "wind_velocity_inertial": {
+        "frame": "inertial",
+        "offset": 21,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s"
       }
     },
     "integration": {
@@ -468,6 +479,15 @@
           1
         ],
         "unit": "kg/m^3"
+      },
+      "air_relative_velocity_body": {
+        "frame": "body",
+        "offset": 42,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m/s"
       },
       "air_temperature": {
         "frame": "none",
@@ -672,7 +692,8 @@
         "differential_pressure",
         "body_angular_acceleration",
         "angular_rate_measured_body",
-        "specific_force_measured_body"
+        "specific_force_measured_body",
+        "air_relative_velocity_body"
       ],
       "inputs": [
         "surface_command",
@@ -680,9 +701,10 @@
         "gyro_noise_drive",
         "accel_noise_drive",
         "gyro_bias_drive",
-        "accel_bias_drive"
+        "accel_bias_drive",
+        "wind_velocity_inertial"
       ],
-      "nu": 21,
+      "nu": 24,
       "nx": 27,
       "states": [
         "inertial_position",
