@@ -37,6 +37,18 @@
           "offset": 10,
           "size": 1,
           "unit": "s"
+        },
+        {
+          "name": "airspeed_est",
+          "offset": 11,
+          "size": 1,
+          "unit": "m/s"
+        },
+        {
+          "name": "airspeed_valid",
+          "offset": 12,
+          "size": 1,
+          "unit": "1"
         }
       ],
       "inputs": [
@@ -44,8 +56,8 @@
         "x",
         "p"
       ],
-      "n_in": 11,
-      "n_p": 36,
+      "n_in": 13,
+      "n_p": 41,
       "n_sig": 10,
       "n_surface": 8,
       "n_x": 2,
@@ -90,13 +102,18 @@
         "MIX_6_2",
         "MIX_7_0",
         "MIX_7_1",
-        "MIX_7_2"
+        "MIX_7_2",
+        "STAB_PITCH_TRIM",
+        "TRIM_MOM_L",
+        "TRIM_MOM_M",
+        "TRIM_MOM_N",
+        "STAB_COORD_GAIN"
       ],
       "work": {
         "sz_arg": 11,
         "sz_iw": 0,
         "sz_res": 4,
-        "sz_w": 114
+        "sz_w": 117
       },
       "x_slots": [
         {
@@ -181,20 +198,20 @@
         }
       ]
     },
-    "dynamics_commit": "7c7fb243cce9957e282cd51f00fa7e8468313fd3",
+    "dynamics_commit": "c2bcaf5f440420a3b4fdabd7f1a7d194eb660c19",
     "entry_point": "ctl_step",
     "export_tool_version": "1",
     "files": {
-      "ctl_step.c": "160424f66ea8443904bec802f76b586051914166a8204af3d5f01506ad6bea4f",
-      "ctl_step.casadi": "0eda125d6b0e3685a721fb76c1311126deb55ac1fd50148cba0955af840e2d61"
+      "ctl_step.c": "403ec710162dbe86b704b0049b6968b15e2749724f443a862cbc71a0dd147b8e",
+      "ctl_step.casadi": "bfe4dbac4b0ddd8fa4a2661cc6248f7ed19e1e619a817366049b2a0690dd5c38"
     }
   },
-  "dynamics_commit": "7c7fb243cce9957e282cd51f00fa7e8468313fd3",
+  "dynamics_commit": "c2bcaf5f440420a3b4fdabd7f1a7d194eb660c19",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
-    "count": 36,
-    "sha256": "5b3778f167a52ef2de9b0ecc608c837c29a136491cfea766aba41f1fa5f2b9bc",
+    "count": 41,
+    "sha256": "4f12abeee66b878789ad9a02667c95a538d39067a39ae01d5a250fb0529c4cc8",
     "static": [],
     "symbolic": [
       "MIX_0_0",
@@ -228,19 +245,24 @@
       "RATE_KP_P",
       "RATE_KP_Q",
       "RATE_KP_R",
+      "STAB_COORD_GAIN",
       "STAB_KP_PITCH",
       "STAB_KP_ROLL",
       "STAB_MAX_BANK",
       "STAB_MAX_PITCH",
-      "STAB_YAW_RATE"
+      "STAB_PITCH_TRIM",
+      "STAB_YAW_RATE",
+      "TRIM_MOM_L",
+      "TRIM_MOM_M",
+      "TRIM_MOM_N"
     ],
     "synthesis": {
       "actuator_update_hz": 50.0,
       "cost": {
-        "final": 0.026550708967816316,
-        "initial": 0.026550708967816316
+        "final": 0.025073133457061296,
+        "initial": 0.02520831164376097
       },
-      "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
+      "dynamics_commit": "7c7fb243cce9957e282cd51f00fa7e8468313fd3",
       "floors": {
         "gm_db": 6.0,
         "pm_deg": 45.0
@@ -297,34 +319,34 @@
       "margin_constrained": false,
       "margins": [
         {
-          "crossover_rad_s": 15.175,
-          "gm_db": 18.07,
+          "crossover_rad_s": 15.4432,
+          "gm_db": 18.08,
           "loop": "rate_p",
-          "pm_deg": 69.54
+          "pm_deg": 65.2
         },
         {
-          "crossover_rad_s": 20.4197,
-          "gm_db": 16.76,
+          "crossover_rad_s": 19.1045,
+          "gm_db": 17.7,
           "loop": "rate_q",
-          "pm_deg": 55.74
+          "pm_deg": 55.28
         },
         {
-          "crossover_rad_s": 10.8282,
-          "gm_db": 24.08,
+          "crossover_rad_s": 10.8131,
+          "gm_db": 24.1,
           "loop": "rate_r",
-          "pm_deg": 80.76
+          "pm_deg": 80.79
         },
         {
-          "crossover_rad_s": 6.8464,
-          "gm_db": 14.71,
+          "crossover_rad_s": 7.0519,
+          "gm_db": 13.74,
           "loop": "att_roll",
-          "pm_deg": 69.63
+          "pm_deg": 69.4
         },
         {
-          "crossover_rad_s": 2.8464,
-          "gm_db": 17.41,
+          "crossover_rad_s": 3.7635,
+          "gm_db": 14.0,
           "loop": "att_pitch",
-          "pm_deg": 75.63
+          "pm_deg": 76.7
         }
       ],
       "plant_placeholder": true,
@@ -332,14 +354,20 @@
       "seed": 20260816,
       "stage": "ctl tune",
       "tool_version": "1",
+      "trim_derived": {
+        "STAB_PITCH_TRIM": "0.04646306310060523",
+        "TRIM_MOM_L": "0.0",
+        "TRIM_MOM_M": "0.2799775866267646",
+        "TRIM_MOM_N": "0.0"
+      },
       "tuned": {
-        "RATE_KI_P": "3.7716531664263484",
-        "RATE_KI_Q": "4.97856881104762",
-        "RATE_KP_P": "0.3300788606782503",
-        "RATE_KP_Q": "0.7123521541208022",
-        "RATE_KP_R": "1.8640988115336583",
-        "STAB_KP_PITCH": "3.952682161040797",
-        "STAB_KP_ROLL": "7.057641577576315"
+        "RATE_KI_P": "4.19649146730853",
+        "RATE_KI_Q": "5.0",
+        "RATE_KP_P": "0.3182721015494787",
+        "RATE_KP_Q": "0.6256020270196362",
+        "RATE_KP_R": "1.859225887385095",
+        "STAB_KP_PITCH": "5.456031795160838",
+        "STAB_KP_ROLL": "7.037336769254547"
       },
       "weights": {
         "att": 1.0,
@@ -351,7 +379,7 @@
   },
   "plant": {
     "casadi_version": "3.7.0",
-    "dynamics_commit": "7c7fb243cce9957e282cd51f00fa7e8468313fd3",
+    "dynamics_commit": "c2bcaf5f440420a3b4fdabd7f1a7d194eb660c19",
     "entry_point": "plant_step",
     "export_tool_version": "1",
     "files": {
