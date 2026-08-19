@@ -181,7 +181,7 @@
         }
       ]
     },
-    "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
+    "dynamics_commit": "7c7fb243cce9957e282cd51f00fa7e8468313fd3",
     "entry_point": "ctl_step",
     "export_tool_version": "1",
     "files": {
@@ -189,12 +189,12 @@
       "ctl_step.casadi": "0eda125d6b0e3685a721fb76c1311126deb55ac1fd50148cba0955af840e2d61"
     }
   },
-  "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
+  "dynamics_commit": "7c7fb243cce9957e282cd51f00fa7e8468313fd3",
   "export_tool_version": "1",
   "param_csv_contract": 1,
   "params": {
     "count": 36,
-    "sha256": "6862c5ffe68a8eff72ae89cd4625e842cbbcefa7053df1bc7639c51c0b3d1a37",
+    "sha256": "5b3778f167a52ef2de9b0ecc608c837c29a136491cfea766aba41f1fa5f2b9bc",
     "static": [],
     "symbolic": [
       "MIX_0_0",
@@ -237,51 +237,94 @@
     "synthesis": {
       "actuator_update_hz": 50.0,
       "cost": {
-        "final": 0.03100863535655725,
-        "initial": 0.031055466448642894
+        "final": 0.026550708967816316,
+        "initial": 0.026550708967816316
       },
-      "dynamics_commit": "171f2c26958ac9b6b0985ec0733b205f03b9356c",
+      "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
       "floors": {
         "gm_db": 6.0,
         "pm_deg": 45.0
       },
       "iters": 60,
+      "lineage": {
+        "artifacts": {
+          "aerodb": {
+            "airspeed_m_s": [
+              30.0
+            ],
+            "alpha_deg": [
+              -4.0,
+              8.0,
+              3
+            ],
+            "beta_deg": [
+              -5.0,
+              5.0,
+              3
+            ],
+            "flap": [
+              0.0
+            ],
+            "id": "icarus-B.5bbfd5aa.770ec9d8"
+          },
+          "engine_deck": {
+            "engine": "Hybl H20PRO",
+            "fuel_capacity_kg": 3.128,
+            "status": "estimated"
+          },
+          "massprops": {
+            "cg_m": [
+              -0.0019282967996139013,
+              0.00015295629673409012,
+              -0.02311767595658991
+            ],
+            "dry_mass_kg": 19.428936999999994,
+            "source": "massprops.json (mass/CG/inertia estimated/estimated/estimated)"
+          }
+        },
+        "placeholder": true,
+        "placeholder_components": [
+          "actuation",
+          "environment",
+          "sensors"
+        ]
+      },
       "manoeuvre": {
         "dt_s": 0.005,
         "n_steps": 1800,
         "name": "doublet_sticks"
       },
-      "margin_constrained": true,
+      "margin_constrained": false,
       "margins": [
         {
-          "crossover_rad_s": 8.6939,
-          "gm_db": 20.98,
+          "crossover_rad_s": 15.175,
+          "gm_db": 18.07,
           "loop": "rate_p",
-          "pm_deg": 64.63
+          "pm_deg": 69.54
         },
         {
-          "crossover_rad_s": 9.9865,
-          "gm_db": 18.87,
+          "crossover_rad_s": 20.4197,
+          "gm_db": 16.76,
           "loop": "rate_q",
-          "pm_deg": 45.01
+          "pm_deg": 55.74
         },
         {
-          "crossover_rad_s": 4.2032,
-          "gm_db": 28.09,
+          "crossover_rad_s": 10.8282,
+          "gm_db": 24.08,
           "loop": "rate_r",
-          "pm_deg": 90.81
+          "pm_deg": 80.76
         },
         {
-          "crossover_rad_s": 4.2907,
-          "gm_db": 11.7,
+          "crossover_rad_s": 6.8464,
+          "gm_db": 14.71,
           "loop": "att_roll",
-          "pm_deg": 62.51
+          "pm_deg": 69.63
         },
         {
-          "crossover_rad_s": 4.3713,
-          "gm_db": 9.23,
+          "crossover_rad_s": 2.8464,
+          "gm_db": 17.41,
           "loop": "att_pitch",
-          "pm_deg": 71.5
+          "pm_deg": 75.63
         }
       ],
       "plant_placeholder": true,
@@ -290,13 +333,13 @@
       "stage": "ctl tune",
       "tool_version": "1",
       "tuned": {
-        "RATE_KI_P": "3.824326877690407",
-        "RATE_KI_Q": "2.6732643662534223",
-        "RATE_KP_P": "0.5285447309500837",
-        "RATE_KP_Q": "0.6884885221768535",
-        "RATE_KP_R": "2.2441783793194507",
-        "STAB_KP_PITCH": "3.6661289785961206",
-        "STAB_KP_ROLL": "4.359113507816538"
+        "RATE_KI_P": "3.7716531664263484",
+        "RATE_KI_Q": "4.97856881104762",
+        "RATE_KP_P": "0.3300788606782503",
+        "RATE_KP_Q": "0.7123521541208022",
+        "RATE_KP_R": "1.8640988115336583",
+        "STAB_KP_PITCH": "3.952682161040797",
+        "STAB_KP_ROLL": "7.057641577576315"
       },
       "weights": {
         "att": 1.0,
@@ -308,16 +351,16 @@
   },
   "plant": {
     "casadi_version": "3.7.0",
-    "dynamics_commit": "b6b435484433cfea6116818fa1975368b3bd59b4",
+    "dynamics_commit": "7c7fb243cce9957e282cd51f00fa7e8468313fd3",
     "entry_point": "plant_step",
     "export_tool_version": "1",
     "files": {
       "plant_linkage.c": "7ddcaf10916f53968a1f7cc13ac76e9fd07b9a322331ad7947efb4dc8d2fbdea",
       "plant_linkage.casadi": "2c34d5b6b277ba609990ce48825611f83928c455dde7911848495cfd30674000",
-      "plant_observe.c": "74c901389946caa3080902c911cd3af2326db5ec042cd8e0881e7cdb687e26b4",
-      "plant_observe.casadi": "1fd9110b6c4755f6e9fc03f8c8e9046b28bbe584a6d2098829b0d98a9d5f8112",
-      "plant_step.c": "366ac5905b98a2505f68851e471a7d9900a0bd1c49ced98013b9ebe6dd0d58b1",
-      "plant_step.casadi": "7abe10f3511ab47aaa76c7d0e0756575871784e66fcc087530d6293c7b77e9d9"
+      "plant_observe.c": "7f6e675c49e5be11dff5855444fbffff8619166776e18053f9a3ff82d50f5db1",
+      "plant_observe.casadi": "5abe36f2e9da3673b0b5013a6e9715ac4bf0c79e919fb9da0bbecd4c021df156",
+      "plant_step.c": "21424de8ff0f4e586da8cde94df5ceac23a66d03f4c9a2885100165af3c1b845",
+      "plant_step.casadi": "1f6075ff37cda14c77d28c8294eb7be3f68b0291c9ea57d2b1facdc2034b7392"
     },
     "input_layout": {
       "accel_bias_drive": {
@@ -417,6 +460,24 @@
         ],
         "unit": "m/s"
       },
+      "engine_speed": {
+        "frame": "none",
+        "offset": 27,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "rad/s"
+      },
+      "fuel_mass": {
+        "frame": "none",
+        "offset": 28,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "kg"
+      },
       "gyro_bias_body": {
         "frame": "body",
         "offset": 21,
@@ -507,6 +568,15 @@
         ],
         "unit": "m/s"
       },
+      "alpha": {
+        "frame": "none",
+        "offset": 48,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "rad"
+      },
       "altitude_msl": {
         "frame": "none",
         "offset": 26,
@@ -525,6 +595,15 @@
         ],
         "unit": "rad/s"
       },
+      "beta": {
+        "frame": "none",
+        "offset": 49,
+        "shape": [
+          1,
+          1
+        ],
+        "unit": "rad"
+      },
       "body_angular_acceleration": {
         "frame": "body",
         "offset": 33,
@@ -533,6 +612,15 @@
           1
         ],
         "unit": "rad/s^2"
+      },
+      "cg_position_body": {
+        "frame": "body",
+        "offset": 45,
+        "shape": [
+          3,
+          1
+        ],
+        "unit": "m"
       },
       "differential_pressure": {
         "frame": "none",
@@ -671,6 +759,8 @@
       0.0,
       0.0,
       0.0,
+      0.0,
+      0.0,
       0.0
     ],
     "signature": {
@@ -693,7 +783,10 @@
         "body_angular_acceleration",
         "angular_rate_measured_body",
         "specific_force_measured_body",
-        "air_relative_velocity_body"
+        "air_relative_velocity_body",
+        "cg_position_body",
+        "alpha",
+        "beta"
       ],
       "inputs": [
         "surface_command",
@@ -705,7 +798,7 @@
         "wind_velocity_inertial"
       ],
       "nu": 24,
-      "nx": 27,
+      "nx": 29,
       "states": [
         "inertial_position",
         "inertial_orientation_quaternion",
@@ -713,8 +806,88 @@
         "body_angular_velocity",
         "surface_position",
         "gyro_bias_body",
-        "accel_bias_body"
+        "accel_bias_body",
+        "engine_speed",
+        "fuel_mass"
       ]
+    },
+    "surfaces": [
+      "aileron_left",
+      "aileron_right",
+      "flap_left",
+      "flap_right",
+      "stabilator",
+      "ruddervator_left",
+      "ruddervator_right",
+      "unused"
+    ],
+    "trim": {
+      "alpha_rad": 0.04651411439377314,
+      "condition": {
+        "airspeed_m_s": 50.0,
+        "altitude_m": 150.0,
+        "note": "wings level, heading north, at the origin; steady level flight"
+      },
+      "input": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.11412715862979625,
+        0.0,
+        0.0,
+        0.0,
+        0.06459573681815609,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "residual": 0.002415126628593368,
+      "stabilator_rad": -0.11412715862979625,
+      "state": [
+        0.0,
+        0.0,
+        -150.0,
+        0.0,
+        0.023254960665892555,
+        0.0,
+        0.9997295668351656,
+        49.94592068044278,
+        0.0,
+        2.324867175328158,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.11412715862979625,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        4422.551368478486,
+        1.564
+      ],
+      "throttle": 0.06459573681815609
     }
   }
 }

@@ -25,13 +25,13 @@ MIX_7_1,0.0,f32,rad,-0.6,0.6,0.0,disarmed,manual,Allocation; surface 7 radians p
 MIX_7_2,0.0,f32,rad,-0.6,0.6,0.0,disarmed,manual,Allocation; surface 7 radians per unit yaw moment demand
 RATE_ILIM_P,0.2,f32,rad,0.0,1.0,0.2,disarmed,manual,Roll integrator clamp; the anti-windup is this clamp and nothing subtler
 RATE_ILIM_Q,0.2,f32,rad,0.0,1.0,0.2,disarmed,manual,Pitch integrator clamp; the anti-windup is this clamp and nothing subtler
-RATE_KI_P,3.824326877690407,f32,1,0.0,5.0,0.05,disarmed,synthesized,Roll-rate loop integral gain; demand per radian of integrated rate error
-RATE_KI_Q,2.6732643662534223,f32,1,0.0,5.0,0.05,disarmed,synthesized,Pitch-rate loop integral gain; demand per radian of integrated rate error
-RATE_KP_P,0.5285447309500837,f32,s,0.0,3.0,0.15,disarmed,synthesized,Roll-rate loop proportional gain
-RATE_KP_Q,0.6884885221768535,f32,s,0.0,3.0,0.15,disarmed,synthesized,Pitch-rate loop proportional gain
-RATE_KP_R,2.2441783793194507,f32,s,0.0,8.0,0.1,disarmed,synthesized,Yaw-rate damper gain; there is no yaw integrator because heading is not held
-STAB_KP_PITCH,3.6661289785961206,f32,1/s,0.0,20.0,2.0,disarmed,synthesized,Pitch attitude loop gain; rad/s of rate setpoint per rad of pitch error
-STAB_KP_ROLL,4.359113507816538,f32,1/s,0.0,20.0,2.0,disarmed,synthesized,Roll attitude loop gain; rad/s of rate setpoint per rad of bank error
+RATE_KI_P,3.7716531664263484,f32,1,0.0,5.0,0.05,disarmed,synthesized,Roll-rate loop integral gain; demand per radian of integrated rate error
+RATE_KI_Q,4.97856881104762,f32,1,0.0,5.0,0.05,disarmed,synthesized,Pitch-rate loop integral gain; demand per radian of integrated rate error
+RATE_KP_P,0.3300788606782503,f32,s,0.0,3.0,0.15,disarmed,synthesized,Roll-rate loop proportional gain
+RATE_KP_Q,0.7123521541208022,f32,s,0.0,3.0,0.15,disarmed,synthesized,Pitch-rate loop proportional gain
+RATE_KP_R,1.8640988115336583,f32,s,0.0,8.0,0.1,disarmed,synthesized,Yaw-rate damper gain; there is no yaw integrator because heading is not held
+STAB_KP_PITCH,3.952682161040797,f32,1/s,0.0,20.0,2.0,disarmed,synthesized,Pitch attitude loop gain; rad/s of rate setpoint per rad of pitch error
+STAB_KP_ROLL,7.057641577576315,f32,1/s,0.0,20.0,2.0,disarmed,synthesized,Roll attitude loop gain; rad/s of rate setpoint per rad of bank error
 STAB_MAX_BANK,0.6981317007977318,f32,rad,0.0,1.2,0.6981317007977318,disarmed,manual,Bank angle commanded at full roll stick in STAB; 0.698 rad is 40 degrees
 STAB_MAX_PITCH,0.3490658503988659,f32,rad,0.0,0.7,0.3490658503988659,disarmed,manual,Pitch angle commanded at full pitch stick in STAB; 0.349 rad is 20 degrees
 STAB_YAW_RATE,0.5,f32,rad/s,0.0,3.0,0.5,disarmed,manual,Yaw rate commanded at full yaw stick in STAB; between sticks the damper holds zero
